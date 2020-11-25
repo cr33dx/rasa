@@ -1168,15 +1168,15 @@ def _training_payload_from_json(request: Request) -> Dict[Text, Union[Text, bool
     rasa.shared.utils.io.write_text_file(request_payload["config"], config_path)
 
     if "nlu" in request_payload:
-        nlu_path = os.path.join(temp_dir, "nlu.md")
+        nlu_path = os.path.join(temp_dir, "nlu.yaml")
         rasa.shared.utils.io.write_text_file(request_payload["nlu"], nlu_path)
 
     if "stories" in request_payload:
-        stories_path = os.path.join(temp_dir, "stories.md")
+        stories_path = os.path.join(temp_dir, "stories.yaml")
         rasa.shared.utils.io.write_text_file(request_payload["stories"], stories_path)
 
     if "responses" in request_payload:
-        responses_path = os.path.join(temp_dir, "responses.md")
+        responses_path = os.path.join(temp_dir, "responses.yaml")
         rasa.shared.utils.io.write_text_file(
             request_payload["responses"], responses_path
         )
